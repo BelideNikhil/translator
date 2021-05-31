@@ -13,21 +13,16 @@ function errorHandler(error) {
     alert("something wrong with server! try again after some time")
 }
 translate_btn.addEventListener("click", ()=>{
-    fetch(createURL(input_text.value))
-    .then(response =>response.json())
-    .then(json=>{
-        outputDiv.innerText = json.contents.translated;
-    })
-    .catch(errorHandler)
-   
+    
+    translate_btn.innerHTML="Your data is being translated..."
+    setTimeout(()=>{
+        translate_btn.innerHTML="Translate"},3000);
+        fetch(createURL(input_text.value))
+       .then(response =>response.json())
+       .then(json=>{
+           output_catch.innerText = json.contents.translated;
+        })
+        .catch(errorHandler)
 })
 
 
-// translate_btn.innerHTML="Your data is being translated..."
-// output_catch.innerHTML='...'
-// // =======================
-// setTimeout(()=>{
-//     output_catch.innerHTML=input_text.value
-//     translate_btn.innerHTML="Translate"
-// },3000);
-// // =====================
