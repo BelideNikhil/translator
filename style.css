@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --max-width:600px
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    width:var(--max-width);
+    padding: 20px;
+}
+.content >*{
+    margin: 20px 5px;
+    min-width:200px;
+    min-height: 100px;
+    padding: 25px 10px;
+}
+#output{
+    border: 2px solid;
+    overflow:auto;
+}
