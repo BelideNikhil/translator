@@ -1,30 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-:root{
-    --max-width:600px
+.container{
+    max-width: 600px;
 }
 body{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background: url("https://c4.wallpaperflare.com/wallpaper/375/986/399/despicable-me-movies-cgi-minions-wallpaper-preview.jpg") no-repeat center center/cover;
+}
+header,footer{
+    height: 100%;
+    width: 100%;
+    color: wheat;
+    text-decoration: underline ;
+    font-family: Bungee Shade;
+}
+.hero{
+    width: 100%;
+    height: 80vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height:100vh;
+    flex-direction: column;
+    opacity: 0.92;
+    padding: 0 20px;
 }
-.content{
-    display: flex;
-    flex-direction: row;
-    width:var(--max-width);
+.hero .container{
     padding: 20px;
+    width: 100%;
+    background: rgb(58, 71, 146);
+    border: none;
+    border-radius: 1.5px;
 }
-.content >*{
-    margin: 20px 5px;
-    min-width:200px;
-    min-height: 100px;
-    padding: 25px 10px;
+.hero .container>*{
+    width: 100%;
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    min-height: 35px;
+    background: wheat;
+    border: none;
+    border-radius: 1.5px;
+    font-weight: 700; 
 }
-#output{
-    border: 2px solid;
-    overflow:auto;
-}
+

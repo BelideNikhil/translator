@@ -16,13 +16,14 @@ translate_btn.addEventListener("click", ()=>{
     
     translate_btn.innerHTML="Your data is being translated..."
     setTimeout(()=>{
-        translate_btn.innerHTML="Translate"},3000);
+        translate_btn.innerHTML="Translate",
         fetch(createURL(input_text.value))
-       .then(response =>response.json())
-       .then(json=>{
-           output_catch.innerText = json.contents.translated;
+        .then(response =>response.json())
+        .then(json=>{
+            output_catch.innerText = json.contents.translated;
         })
-        .catch(errorHandler)
+        .catch(errorHandler)},1500);
+        
 })
 
 
