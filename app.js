@@ -3,30 +3,33 @@ var input_text=document.querySelector("#textarea");
 var translate_btn=document.querySelector("#translator");
 var output_catch=document.querySelector("#output");
 var chooser=document.querySelector("#choose")
+var tester=document.querySelector("#tester")
 var keys="";
 
 // ===========================storage========================
 var storageURL=[{k:"minion",u:"https://api.funtranslations.com/translate/minion.json"},
 {k:"yoda",u:"https://api.funtranslations.com/translate/yoda.json"},
-{k:"morse",u:"https://api.funtranslations.com/translate/morse.json"}
+{k:"morse",u:"https://api.funtranslations.com/translate/morse.json"},
+{k:"wakandan",u:"https://api.funtranslations.com/translate/wakandan.json"}
 ]
 
 var serverURL;
 // =========================translator chooser=================
 chooser.addEventListener('keypress', function (e) {
+    
     if (e.key === 'Enter') {
         keys=chooser.value;
         for(var i=0;i<storageURL.length;i++){
             var holder=storageURL[i].k;
-            if(keys===holder){
-                serverURL=storageURL[i].u
+            if(keys.toUpperCase()===holder.toUpperCase()){
+                tester.innerHTML=holder + " translator enabled"
                 console.log("pass")
+                serverURL=storageURL[i].u
                 console.log( serverURL)
-            }
+            }  
         }
     }
 });
-
 // ======================fina url creator==========================
 function createURL(){
    return serverURL +"?"+"text=" +input_text.value
