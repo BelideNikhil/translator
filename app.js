@@ -1,6 +1,6 @@
 console.log("hello")
-var input_text=document.querySelector("#textarea");
 var translate_btn=document.querySelector("#translator");
+var input_text=document.querySelector("#textarea");
 var output_catch=document.querySelector("#output");
 
 var serverURL = "https://api.funtranslations.com/translate/minion.json";
@@ -10,19 +10,28 @@ function createURL(){
 }
 function errorHandler(error) {
     console.log("error occured", error);
-    alert("something wrong with server! try again after some time")
+    output_catch.innerText="Something wrong with server! try again after some time";
+    setTimeout(()=>{
+        input_text.value='';
+        output_catch.innerText='';
+    },2000)
+    
 }
 translate_btn.addEventListener("click", ()=>{
-    
-    translate_btn.innerHTML="Your data is being translated..."
-    setTimeout(()=>{
-        translate_btn.innerHTML="Translate",
+    if(input_text.value!=''){
         fetch(createURL(input_text.value))
         .then(response =>response.json())
         .then(json=>{
             output_catch.innerText = json.contents.translated;
         })
-        .catch(errorHandler)},1500);
+        .catch(errorHandler)
+
+    }else{
+        output_catch.innerText = "Please enter some data to process it";
+        setTimeout(()=>{
+            output_catch.innerText=''
+        },2500)
+    }
         
 })
 

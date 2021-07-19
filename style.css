@@ -14,13 +14,20 @@ body{
     text-align: center;
     flex-direction: column;
     background: url("https://c4.wallpaperflare.com/wallpaper/375/986/399/despicable-me-movies-cgi-minions-wallpaper-preview.jpg") no-repeat center center/cover;
+    font-family: Bungee Shade;
+    color: wheat;
 }
 header,footer{
     height: 100%;
     width: 100%;
-    color: wheat;
     text-decoration: underline ;
-    font-family: Bungee Shade;
+}
+p{
+    background: black;
+    color: whitesmoke;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 8px;
 }
 .hero{
     width: 100%;
