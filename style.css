@@ -20,7 +20,7 @@ body{
 header,footer{
     height: 100%;
     width: 100%;
-    text-decoration: underline ;
+    text-decoration: underline;
 }
 p{
     background: black;
@@ -28,10 +28,11 @@ p{
     font-family:'Courier New', Courier, monospace;
     font-size: 20px;
     padding: 8px;
+    margin: 20px;
 }
 .hero{
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,9 +59,22 @@ p{
     font-weight: 700; 
 }#output{
     min-height:130px;
+    color: black;
+}
+#translator{
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid black;
 }
 #translator:hover{
-    transform: scale(0.98);
-    background: rgb(202, 179, 136);
+    transform: scale(0.99);
+    background: rgb(241, 238, 232);
 }
-
+@media screen and (max-width:400px) {
+    body{
+        height: 100vh;
+    }
+    .hero{
+        height:max-content;
+    }
+}
