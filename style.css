@@ -16,11 +16,25 @@ body{
     background: url("https://c4.wallpaperflare.com/wallpaper/375/986/399/despicable-me-movies-cgi-minions-wallpaper-preview.jpg") no-repeat center center/cover;
     font-family: Bungee Shade;
     color: wheat;
+    height: 100vh;
 }
 header,footer{
     height: 100%;
     width: 100%;
     text-decoration: underline;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: wheat;
+    padding: 5px 10px;
 }
 p{
     background: black;
@@ -32,7 +46,6 @@ p{
 }
 .hero{
     width: 100%;
-    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +82,10 @@ p{
 #translator:hover{
     transform: scale(0.99);
     background: rgb(241, 238, 232);
+}
+footer a:hover{
+    background-color: black;
+    border-radius: 5px;
 }
 @media screen and (max-width:400px) {
     body{
